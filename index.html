@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staking Interface</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <h1>Staking Interface</h1>
+        <div>
+            <label for="stake-amount">Amount to Stake:</label>
+            <input type="text" id="stake-amount">
+            <button onclick="stakeTokens()">Stake Tokens</button>
+        </div>
+        <div>
+            <label for="unstake-amount">Amount to Unstake:</label>
+            <input type="text" id="unstake-amount">
+            <button onclick="unstakeTokens()">Withdraw Stake And Interest</button>
+        </div>
+        <div>
+            <button onclick="withdrawInterest()">Withdraw Interest</button>
+        </div>
+        <div>
+            <button onclick="loadStakingEvents()">Refresh Staking Activity</button>
+        </div>
+        <div id="events-container">
+            <!-- Staking and unstaking events will be displayed here -->
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.6.1/dist/web3.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
