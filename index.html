@@ -8,15 +8,20 @@
 </head>
 <body>
     <div>
+        <h2>Stake token faucet for evaluator to check the staking program</h2>
+        <div float="right">
+            <input type="text" id="mint-amount" placeholder="Amount to Mint">
+            <button onclick="mintStakeTokens(document.getElementById('mint-amount').value)">Mint Stake Tokens</button>
+        </div>
         <h1>Staking Interface</h1>
-        <div>
-            <label for="stake-amount">Amount to Stake:</label>
-            <input type="text" id="stake-amount">
-            <button onclick="stakeTokens()">Stake Tokens</button>
+        <div class="container">
+            <input type="text" id="stake-amount" placeholder="Amount to Stake">
+            <button onclick="stakeTokens(document.getElementById('stake-amount').value)">Stake</button>
+            <div id="loader" class="loader" style="display:none;"></div> <!-- Loader element -->
         </div>
         <div>
-            <label for="unstake-amount">Amount to Unstake:</label>
-            <input type="text" id="unstake-amount">
+            <label for="unstake-amount"></label>
+            <input type="text" id="unstake-amount" placeholder="Amount to Unstake">
             <button onclick="unstakeTokens()">Withdraw Stake And Interest</button>
         </div>
         <div>
