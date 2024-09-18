@@ -1,40 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Staking Interface</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-    <div>
-        <h2>Stake token faucet for evaluator to check the staking program</h2>
-        <div float="right">
-            <input type="text" id="mint-amount" placeholder="Amount to Mint">
-            <button onclick="mintStakeTokens(document.getElementById('mint-amount').value)">Mint Stake Tokens</button>
+    <div class="container">
+        <div style="max-width: 720px; margin: 0 auto;">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3 class="mb-4">Stake token faucet for evaluator to check the staking program</h3>
+                    <input type="text" id="mint-amount" class="form-control mb-3" placeholder="Amount to Mint">
+                    <button class="btn btn-primary "
+                        onclick="mintStakeTokens(document.getElementById('mint-amount').value)">Mint Stake
+                        Tokens</button>
+                </div>
+            </div>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3 class="mb-4">Staking Interface</h3>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <input type="text" class="form-control" id="stake-amount" placeholder="Amount to Stake">
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-primary"
+                            onclick="stakeTokens(document.getElementById('stake-amount').value)">Stake</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control" id="unstake-amount" placeholder="Amount to Unstake">
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-primary mb-3" onclick="unstakeTokens()">Withdraw Stake And Interest</button>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
         </div>
-        <h1>Staking Interface</h1>
-        <div class="container">
-            <input type="text" id="stake-amount" placeholder="Amount to Stake">
-            <button onclick="stakeTokens(document.getElementById('stake-amount').value)">Stake</button>
-            <div id="loader" class="loader" style="display:none;"></div> <!-- Loader element -->
+        <div id="loader" class="loader" style="display:none;"></div>
+        <div>
+            <button class="btn btn-primary mb-3" onclick="withdrawInterest()">Withdraw Interest</button>
         </div>
         <div>
-            <label for="unstake-amount"></label>
-            <input type="text" id="unstake-amount" placeholder="Amount to Unstake">
-            <button onclick="unstakeTokens()">Withdraw Stake And Interest</button>
-        </div>
-        <div>
-            <button onclick="withdrawInterest()">Withdraw Interest</button>
-        </div>
-        <div>
-            <button onclick="loadStakingEvents()">Refresh Staking Activity</button>
+            <button class="btn btn-primary mb-3" onclick="loadStakingEvents()">Refresh Staking Activity</button>
         </div>
         <div id="events-container">
             <!-- Staking and unstaking events will be displayed here -->
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/web3@1.6.1/dist/web3.min.js"></script>
-    <script src="script.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
 </body>
+
 </html>
