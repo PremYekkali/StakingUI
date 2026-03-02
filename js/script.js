@@ -2,7 +2,9 @@
 let web3;
 let stakingContract;
 let currentAccount;
+//staking address
 const stakingContractAddress = '0x1231DF9091BcBf76cd227a1031E362B7E350bBB8';
+//staking contract abi
 const stakingContractABI = [
 	{
 		"constant": false,
@@ -693,6 +695,7 @@ const tokenABI = [
 		"type": "function"
 	}
 ]
+//token address
 const tokenAddress = '0xa95d8e49d072b108Ac12D03DFFdF8C941A6f25b3';
 
 let tokenContract;
@@ -884,4 +887,5 @@ async function mintStakeTokens() {
         console.error('Error minting tokens:', error);
         alert('Error minting tokens. Check console for details.');
     }
+
 }
