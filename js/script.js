@@ -830,7 +830,7 @@ async function unstakeTokens() {
     try {
         await stakingContract.methods.withdrawStakeAndInterest(web3.utils.toWei(amount, 'ether')).send({ from: account });
         alert('Tokens unstaked successfully!');
-        loadStakingEvents();  // Refresh events
+        loadStakingEvents();  // Refresh the events
     } catch (error) {
         console.error(error);
         alert('Error unstaking tokens.');
@@ -844,7 +844,7 @@ async function withdrawInterest() {
     try {
         await stakingContract.methods.withdrawInterest().send({ from: account });
         alert('Interest withdrawn successfully!');
-        loadStakingEvents();  // Refresh events
+        loadStakingEvents();  // Refresh the events
     } catch (error) {
         console.error(error);
         alert('Error withdrawing interest.');
@@ -880,7 +880,7 @@ async function mintStakeTokens() {
     const amountInWei = web3.utils.toWei(amountToMint, 'ether');
 
     try {
-        // Call the mint function on the contract
+        // Call the mint function on the contract,
         await tokenContract.methods.mint(currentAccount, amountInWei).send({ from: currentAccount });
         alert('Tokens minted successfully!');
     } catch (error) {
