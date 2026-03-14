@@ -752,13 +752,13 @@ async function loadStakingEvents() {
     const accounts = await web3.eth.getAccounts();
     const account = accounts[0];
 
-    // Helper function to get block timestamp
+    // Helper function to get block timestamp using web3
     async function getBlockTimestamp(blockNumber) {
         const block = await web3.eth.getBlock(blockNumber);
         return block.timestamp;
     }
 
-    // Listen for Staked events
+    // Listen for Staked event
     stakingContract.events.Staked({
         filter: { staker: account }, // Optional: filter for the current account
         fromBlock: 0,
@@ -775,7 +775,7 @@ async function loadStakingEvents() {
     })
     .on('error', console.error);
 
-    // Listen for StakeWithdrawn events
+    // Listen for StakeWithdrawn event
     stakingContract.events.StakeWithdrawn({
         filter: { staker: account }, // Optional: filter for the current account
         fromBlock: 0,
