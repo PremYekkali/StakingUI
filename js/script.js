@@ -2,7 +2,7 @@
 let web3;
 let stakingContract;
 let currentAccount;
-//staking address
+//staking contract address
 const stakingContractAddress = '0x1231DF9091BcBf76cd227a1031E362B7E350bBB8';
 //staking contract abi
 const stakingContractABI = [
