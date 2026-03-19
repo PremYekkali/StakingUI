@@ -1,4 +1,4 @@
-// Set up Web3 and the smart contract
+// Set up Web3 and the smart contract which we need to interact with
 let web3;
 let stakingContract;
 let currentAccount;
@@ -880,7 +880,7 @@ async function mintStakeTokens() {
     const amountInWei = web3.utils.toWei(amountToMint, 'ether');
 
     try {
-        // Call the mint function on the contract,
+        // Call the mint function on the smart contract,
         await tokenContract.methods.mint(currentAccount, amountInWei).send({ from: currentAccount });
         alert('Tokens minted successfully!');
     } catch (error) {
