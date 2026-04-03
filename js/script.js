@@ -1,4 +1,4 @@
-// Set up Web3 and the smart contract which we need to interact with
+// Set up Web3 and the smart contract, which we need to interact with
 let web3;
 let stakingContract;
 let currentAccount;
@@ -752,13 +752,13 @@ async function loadStakingEvents() {
     const accounts = await web3.eth.getAccounts();
     const account = accounts[0];
 
-    // Helper function to get block timestamp using web3
+    // Helper function to get block timestamp by using web3
     async function getBlockTimestamp(blockNumber) {
         const block = await web3.eth.getBlock(blockNumber);
         return block.timestamp;
     }
 
-    // Listen for Staked event
+    // Listen for "Staked" event
     stakingContract.events.Staked({
         filter: { staker: account }, // Optional: filter for the current account
         fromBlock: 0,
