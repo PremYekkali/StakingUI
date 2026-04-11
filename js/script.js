@@ -329,6 +329,7 @@ const stakingContractABI = [
 	}
 ]
 
+// Token contract abi
 const tokenABI = [
 	{
 		"constant": false,
@@ -700,6 +701,7 @@ const tokenAddress = '0xa95d8e49d072b108Ac12D03DFFdF8C941A6f25b3';
 
 let tokenContract;
 
+//Function to get allowance
 async function getAllowance(owner, spender) {
     return await tokenContract.methods.allowance(owner, spender).call();
 }
